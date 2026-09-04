@@ -1,5 +1,5 @@
 import { useAuth } from '../context/AuthContext'
-import { get } from '../../utils/storage'
+import { get } from '../utils/storage'
 
 const InspectMitra = () => {
   const { session, logout } = useAuth()

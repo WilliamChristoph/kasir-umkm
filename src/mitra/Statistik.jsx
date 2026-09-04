@@ -1,6 +1,6 @@
 import { useAuth } from '../context/AuthContext'
-import { get } from '../../utils/storage'
-import Toast from '../../components/Toast'
+import { get } from '../utils/storage'
+import Toast from '../components/Toast'
 
 const Statistik = () => {
   const { session } = useAuth()

@@ -1,9 +1,9 @@
 import { useAuth } from '../context/AuthContext'
-import { get } from '../../utils/storage'
-import Button from '../../components/Button'
-import Input from '../../components/Input'
-import Modal from '../../components/Modal'
-import Toast from '../../components/Toast'
+import { get } from '../utils/storage'
+import Button from '../components/Button'
+import Input from '../components/Input'
+import Modal from '../components/Modal'
+import Toast from '../components/Toast'
 
 const HomeKasir = () => {
   const { session } = useAuth()

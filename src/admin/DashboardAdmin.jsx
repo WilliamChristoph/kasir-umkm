@@ -1,6 +1,6 @@
 import { useAuth } from '../context/AuthContext'
 import { useState, useEffect } from 'react'
-import { get } from '../../utils/storage'
+import { get } from '../utils/storage'
 
 const DashboardAdmin = () => {
   const { session } = useAuth()
@@ -100,41 +100,43 @@ const DashboardAdmin = () => {
   const keuntungan = totalPemasukan - totalPengeluaran
   
   return (
-    <div className="grid grid-cols-1 gap-6">
-      <div className="grid grid-cols-2 gap-4">
+    <div>
+      <div className="grid grid-cols-1 gap-6">
+        <div className="grid grid-cols-2 gap-4">
+          <div className="rounded-xl bg-card p-4 shadow-sm">
+            <div className="text-3xl font-bold">{totalMitra}</div>
+            <div className="text-sm text-muted-italic">Total Mitra</div>
+          </div>
+          <div className="rounded-xl bg-card p-4 shadow-sm">
+            <div className="text-3xl font-bold">{mitraAktif}</div>
+            <div className="text-sm text-muted-italic">Mitra Aktif</div>
+          </div>
+        </div>
+        <div className="rounded-xl bg-yellow-50 p-4">
+          <div className="text-xl font-bold text-yellow-600">{mitraDibanned}</div>
+          <div className="text-sm text-yellow-600/80">Mitra Dibanned</div>
+        </div>
+        <div className="rounded-xl bg-red-50 p-4">
+          <div className="text-xl font-bold text-red-600">{mitraSuspended}</div>
+          <div className="text-sm text-red-600/80">Mitra Suspended</div>
+        </div>
+      </div>
+    
+      <div className="mt-6 grid grid-cols-2 gap-4">
         <div className="rounded-xl bg-card p-4 shadow-sm">
-          <div className="text-3xl font-bold">{totalMitra}</div>
-          <div className="text-sm text-muted-italic">Total Mitra</div>
+          <div className="text-3xl font-bold">{totalProduk}</div>
+          <div className="text-sm text-muted-italic">Total Produk</div>
         </div>
         <div className="rounded-xl bg-card p-4 shadow-sm">
-          <div className="text-3xl font-bold">{mitraAktif}</div>
-          <div className="text-sm text-muted-italic">Mitra Aktif</div>
+          <div className="text-3xl font-bold">{totalTransaksi}</div>
+          <div className="text-sm text-muted-italic">Total Transaksi</div>
         </div>
       </div>
-      <div className="rounded-xl bg-yellow-50 p-4">
-        <div className="text-xl font-bold text-yellow-600">{mitraDibanned}</div>
-        <div className="text-sm text-yellow-600/80">Mitra Dibanned</div>
+      
+      <div className="mt-6 bg-card p-4 rounded-xl">
+        <div className="text-2xl font-bold">{formatRupiah(keuntungan)}</div>
+        <div className="text-sm text-muted-italic">Keuntungan Total</div>
       </div>
-      <div className="rounded-xl bg-red-50 p-4">
-        <div className="text-xl font-bold text-red-600">{mitraSuspended}</div>
-        <div className="text-sm text-red-600/80">Mitra Suspended</div>
-      </div>
-    </div>
-    
-    <div className="mt-6 grid grid-cols-2 gap-4">
-      <div className="rounded-xl bg-card p-4 shadow-sm">
-        <div className="text-3xl font-bold">{totalProduk}</div>
-        <div className="text-sm text-muted-italic">Total Produk</div>
-      </div>
-      <div className="rounded-xl bg-card p-4 shadow-sm">
-        <div className="text-3xl font-bold">{totalTransaksi}</div>
-        <div className="text-sm text-muted-italic">Total Transaksi</div>
-      </div>
-    </div>
-    
-    <div className="mt-6 bg-card p-4 rounded-xl">
-      <div className="text-2xl font-bold">{formatRupiah(keuntungan)}</div>
-      <div className="text-sm text-muted-italic">Keuntungan Total</div>
     </div>
   )
 }

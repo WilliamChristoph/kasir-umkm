@@ -1,8 +1,8 @@
 import { useAuth } from '../context/AuthContext'
-import { get } from '../../utils/storage'
-import Button from '../../components/Button'
-import Modal from '../../components/Modal'
-import Toast from '../../components/Toast'
+import { get } from '../utils/storage'
+import Button from '../components/Button'
+import Modal from '../components/Modal'
+import Toast from '../components/Toast'
 
 const Gudang = () => {
   const { session } = useAuth()
