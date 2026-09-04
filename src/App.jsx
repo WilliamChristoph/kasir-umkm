@@ -19,11 +19,6 @@ const formatRupiah = (amount) => {
 const App = () => {
   const { session, login, logout } = useAuth()
 
-  // Save session to localStorage on every change
-  useEffect(() => {
-    set('session', session)
-  }, [session])
-
   // If not logged in, show login/register
   if (!session.isLoggedIn) {
     return (
